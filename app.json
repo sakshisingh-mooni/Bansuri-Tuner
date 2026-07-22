@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "Bansuri Tuner",
+    "slug": "bansuri-tuner",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "scheme": "bansuritune",
+    "backgroundColor": "#1B1512",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.sakshi.bansurituner",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "Bansuri Tuner listens to your flute in real time to detect pitch and score your practice. Audio is processed on-device and never leaves your phone."
+      }
+    },
+    "android": {
+      "package": "com.sakshi.bansurituner",
+      "adaptiveIcon": {
+        "backgroundColor": "#1B1512",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "permissions": ["android.permission.RECORD_AUDIO", "android.permission.MODIFY_AUDIO_SETTINGS"]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "Bansuri Tuner listens to your flute in real time to detect pitch and score your practice."
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#1B1512",
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 180
+        }
+      ]
+    ]
+  }
+}
