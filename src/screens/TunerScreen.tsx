@@ -144,7 +144,9 @@ export function TunerScreen({ route, navigation }: Props) {
           toleranceCents={toleranceCents}
           onSwaraPress={playSwaraById}
         />
-        <Text style={styles.dialHint}>Tap any note on the dial to hear it</Text>
+        <View style={styles.dialHintPill}>
+          <Text style={styles.dialHintText}>&#9835; Tap any note on the dial to hear it</Text>
+        </View>
         <View style={styles.nameRow}>
           <Text style={styles.swaraName}>{liveReading ? liveReading.swara.name : '—'}</Text>
           {registerLabel && isListening ? <Text style={styles.registerBadge}>{registerLabel}</Text> : null}
@@ -244,11 +246,19 @@ const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: colors.ink },
   content: { padding: spacing.lg, paddingBottom: spacing.xxl, gap: spacing.md },
   dialWrap: { alignItems: 'center', marginTop: spacing.md },
-  dialHint: {
-    fontFamily: typography.body,
-    color: colors.tan,
-    fontSize: 11,
-    marginTop: spacing.xs,
+  dialHintPill: {
+    backgroundColor: colors.surfaceRaised,
+    borderRadius: radii.pill,
+    borderWidth: 1,
+    borderColor: colors.bambooMuted,
+    paddingVertical: 5,
+    paddingHorizontal: spacing.md,
+    marginTop: spacing.sm,
+  },
+  dialHintText: {
+    fontFamily: typography.bodyMedium,
+    color: colors.bamboo,
+    fontSize: 12,
   },
   nameRow: { flexDirection: 'row', alignItems: 'baseline', gap: spacing.sm, marginTop: spacing.md },
   swaraName: {
